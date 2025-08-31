@@ -1,0 +1,102 @@
+---
+interface Props {
+    level?: 1 | 2 | 3 | 4 | 5 | 6;
+    align?: 'center' | 'start' | 'end';
+}
+
+const {level = 1, align = 'center'} = Astro.props;
+
+const resolveTextComponent = (level: Props['level']) => {
+    switch (level) {
+        case 6:
+            return 'h6'
+        case 5:
+            return 'h5'
+        case 4:
+            return 'h4'
+        case 3:
+            return 'h3'
+        case 2:
+            return 'h2'
+        case 1:
+        default:
+            return 'h1'
+    }
+}
+const resolveLevelClass = (level: Props['level']) => {
+    switch (level) {
+        case 6:
+            return 'h6'
+        case 5:
+            return 'h5'
+        case 4:
+            return 'h4'
+        case 3:
+            return 'h3'
+        case 2:
+            return 'h2'
+        case 1:
+        default:
+            return 'h1'
+    }
+}
+
+const Text = resolveTextComponent(level);
+---
+
+<Text
+    class={[
+        'root',
+        align === 'center' && 'alignCentered',
+        align === 'start' && 'alignStart',
+        align === 'end' && 'alignEnd',
+        resolveLevelClass(level),
+    ].filter(Boolean).join(' ')}
+>
+    <slot/>
+</Text>
+
+<style>
+    .root {
+        font-size: 64px;
+        margin: 0;
+        display: inline-flex;
+        align-items: center;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+        font-weight: 400;
+    }
+
+    .alignCentered {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .alignStart {
+        justify-content: start;
+        text-align: start;
+    }
+
+    .alingEnd {
+        justify-content: end;
+        text-align: end;
+    }
+
+    .h6 {
+        font-size: 24px;
+    }
+    .h5 {
+        font-size: 30px;
+    }
+    .h4 {
+        font-size: 36px;
+    }
+    .h3 {
+        font-size: 40px;
+    }
+    .h2 {
+        font-size: 50px;
+    }
+    .h1 {
+        font-size: 64px;
+    }
+</style>

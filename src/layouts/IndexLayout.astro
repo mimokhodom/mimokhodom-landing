@@ -1,0 +1,55 @@
+---
+---
+
+<!DOCTYPE html >
+<html lang="ru">
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+
+    <body>
+        <slot/>
+    </body>
+</html>
+
+<style>
+    @import 'node_modules/modern-normalize/modern-normalize.css';
+</style>
+
+<style>
+    @font-face {
+        font-family: 'Roboto Mono';
+        src:  url('/fonts/RobotoMono-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Roboto Mono';
+        src: url('/fonts/RobotoMono-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'M PLUS Rounded 1c';
+        src: url('/fonts/MPLUSRounded1c-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+</style>
+
+<style>
+    :root {
+        font-family: 'Roboto Mono', monospace;
+
+        --ui--color--background: #FBFBFB;
+    }
+</style>
+
+<style>
+    html {
+        background-color: var(--ui--color--background);
+    }
+</style>

@@ -1,0 +1,234 @@
+---
+import IndexLayout from '@/layouts/IndexLayout.astro';
+import Container from '@/components/Container.astro';
+import ScribbledBubble from '@/components/ScribbledBubble.solid';
+import Headline from '@/components/Headline.astro';
+import Spacing from '@/components/Spacing.astro';
+import Text from '@/components/Text.astro';
+import Message from '@/components/Message.astro';
+import Darya from '@/components/faces/Darya.astro';
+import Ded from '@/components/faces/Ded.astro';
+import Sveta from '@/components/faces/Sveta.astro';
+---
+
+<IndexLayout>
+    <Container align="center">
+        <Spacing size={175} />
+        <ScribbledBubble variant='1'>
+            <Headline>
+                Мимоходом
+            </Headline>
+        </ScribbledBubble>
+        </ScribbledBubble>
+    </Container>
+
+    <Container align="center">
+        <Spacing size={130} />
+        <Headline level={3}>
+            Нескучные прогулки по городу
+        </Headline>
+    </Container>
+
+    <Container>
+        <Spacing size={40} />
+        <div class="AboutAuthorsText">
+            <Sveta />
+            <div class="AboutAuthorsText__content">
+                <Text>
+                    <div class="AboutAuhtorsText__FloadImage">
+                        <Darya />
+                    </div>
+                    Света и Даря - блаблабла. Что-то про нас кратко и про философию дрейфа. Наш проект блаблабла.
+        Вот. БЛабла. Бла. лалалалаллла
+        лалаллалала
+                    <br/>
+                    <br/>
+                    <Text weight={2}>
+                        Света и Даря - блаблабла. Что-то про нас кратко и про философию дрейфа. Наш проект блаблабла.
+            Вот. БЛабла. Бла.алалалаллла
+            лалаллалала
+                    </Text>
+                </Text>
+            </div>
+        </div>
+    </Container>
+
+    <Container align="center">
+        <Spacing size={180} />
+        <ScribbledBubble variant='2'>
+            <Headline level={2}>
+                Мимоходом.Дрейф
+            </Headline>
+        </ScribbledBubble>
+
+        <Spacing size={160} />
+        <div class="AboutAppText">
+            <Text weight={2}>
+                Дрейф бот это блабла и блабла. Он нужен чтобы блаблабла. Вот его блаблаблаблаблабла.
+            </Text>
+        </div>
+
+        <Message />
+    </Container>
+
+    <Container>
+        <Spacing size={160} />
+        <div class="Soon">
+            <div class="Soon__title">
+                <Spacing size="60px" direction="horizontal" />
+                <ScribbledBubble variant='3'>
+                    <Headline level={1}>
+                        Скоро будет
+                    </Headline>
+                </ScribbledBubble>
+                <Spacing size="120px" direction="horizontal" />
+            </div>
+
+            <Ded/>
+        </div>
+    </Container>
+
+    <Container>
+        <Spacing size={160} />
+        <div class="ShowCase">
+            <div class="ShowCase__text">
+                <Text>
+                    Про проект
+БЛаблаблабла блабла блабла блабла бла
+<br/>
+<br/>
+                    Про проект
+БЛаблаблабла блабла блабла блабла бла
+                </Text>
+            </div>
+            <div>
+                <Spacing size={50} />
+                <ScribbledBubble variant='4'>
+                    <Headline level={2} align="start">
+                        Мимоходом.
+                        <br/>
+                        Замечай
+                    </Headline>
+                </ScribbledBubble>
+            </div>
+        </div>
+    </Container>
+
+    <Container>
+        <Spacing size={160} />
+        <div class="ShowCase ShowCase_reversed">
+            <div class="ShowCase__text">
+                <Text align='end'>
+                    Про проект
+БЛаблаблабла блабла блабла блабла
+бла
+<br/>
+<br/>
+БЛаблаблабла блабла БЛаблаблабла блабла БЛаблаблабла блабла БЛаблаблабла блабла блабла блабла бла
+                </Text>
+            </div>
+            <div>
+                <Spacing size={50} />
+                <ScribbledBubble variant='5'>
+                    <Headline level={3} align="start">
+                        Мимоходом.
+                        <br/>
+                        Веди себя естественно
+                    </Headline>
+                </ScribbledBubble>
+            </div>
+        </div>
+    </Container>
+
+    <Container>
+        <Spacing size={160} />
+        <div class="Socials">
+            <div class="Socials__title">
+                <ScribbledBubble variant='6'>
+                    <Headline>
+                        НАШИ СОЦ. СЕТИ
+                    </Headline>
+                </ScribbledBubble>
+            </div>
+        </div>
+        <Spacing size={500} />
+    </Container>
+</IndexLayout>
+
+<style>
+    .AboutAuthorsText {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .AboutAuhtorsText__FloadImage {
+        float: right;
+        min-height: 100%;
+        display: flex;
+        align-items: end;
+        /** Выоста картинки */
+        shape-outside: inset(calc(100% - (329px + 20px)) 0 0);
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+
+    .AboutAuthorsText__content {
+        margin-top: 40px;
+    }
+
+    .AboutAppText {
+        max-width: 700px;
+    }
+
+    .Soon {
+        display: flex;
+        margin: 0 auto;
+        width: fit-content;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 60px;
+        row-gap: 90px;
+    }
+
+    .Soon__title {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .ShowCase {
+        display: flex;
+        flex-direction: row;
+        row-gap: 60px;
+        column-gap: 80px;
+        flex-wrap: wrap;
+        align-items: start;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .ShowCase_reversed {
+        flex-direction: row-reverse;
+    }
+
+    .ShowCase__text {
+        max-width: 500px;
+        flex-grow: 1;
+    }
+
+    .ShowCase_reversed .ShowCase__text {
+        text-align: end;
+    }
+
+    .Socials {
+        width: 100%;
+    }
+
+    .Socials__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

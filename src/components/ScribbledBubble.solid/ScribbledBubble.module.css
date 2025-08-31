@@ -1,0 +1,51 @@
+.root {
+    --svg-px: 0px;
+    --svg-py: 0px;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.svgWrapper {
+    position: relative;
+}
+
+.svg {
+    pointer-events: none;
+    position: absolute;
+
+    top: calc(-1 * var(--svg-py, 0) / 2);
+    left: calc(-1 * var(--svg-px, 0) / 2);
+    height: calc(100% + var(--svg-py, 0));
+    width: calc(100% + var(--svg-px, 0));
+}
+
+.root.type1 {
+    --svg-px: 80%;
+    --svg-py: 300%;
+}
+
+.root.type2 {
+    --svg-px: 30%;
+    --svg-py: 300%;
+}
+
+.root.type3 {
+    --svg-px: 60%;
+    --svg-py: 250%;
+}
+
+.root.type4 {
+    --svg-px: 50%;
+    --svg-py: 120%;
+}
+
+.root.type5 {
+    --svg-px: 50%;
+    --svg-py: 120%;
+}
+
+.root.type6 {
+    --svg-px: 40%;
+    --svg-py: 270%;
+}

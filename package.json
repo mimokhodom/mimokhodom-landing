@@ -1,0 +1,23 @@
+{
+  "name": "mimokhodom-landing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@astrojs/solid-js": "^5.1.0",
+    "astro": "^5.13.2",
+    "modern-normalize": "^3.0.1",
+    "solid-js": "^1.9.9"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

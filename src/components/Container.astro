@@ -1,0 +1,46 @@
+---
+interface Props {
+    align?: 'center' | 'start' | 'end';
+}
+
+const resolveAlign = (align: Props['align']) => {
+    switch (align) {
+        case 'center':
+            return 'alignedCenter';
+        case 'end':
+            return 'alignedEnd';
+        case 'start':
+        default:
+            return 'alignedStart';
+    }
+}
+---
+
+<article class={[,
+    'root',
+    resolveAlign(Astro.props.align),
+].filter(Boolean).join(' ')}>
+    <slot/>
+</article>
+
+<style>
+    .root {
+        max-width: 1080px;
+        padding: 0 32px;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .alignedCenter {
+        align-items: center;
+    }
+    .alignedStart {
+        align-items: start;
+    }
+    .alignedEnd {
+        align-items: end;
+    }
+</style>

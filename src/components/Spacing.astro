@@ -1,0 +1,28 @@
+---
+interface Props {
+    direction?: 'vertical' | 'horizontal';
+    size: number | string;
+}
+
+const direction = Astro.props.direction ?? 'vertical';
+const size = typeof Astro.props.size === 'number' ? `${Astro.props.size}px` : Astro.props.size;
+---
+
+<div
+    class={[
+        direction === 'vertical' && 'spacing_vertical',
+        direction === 'horizontal' && 'spacing_horizontal',
+    ].filter(Boolean).join(' ')}
+    style={`--spacing-size: ${size};`}
+/>
+
+<style>
+    .spacing_vertical {
+        width: 100%;
+        height: var(--spacing-size);
+    }
+    .spacing_horizontal {
+        width: var(--spacing-size);
+        height: 100%;
+    }
+</style>

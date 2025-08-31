@@ -1,0 +1,60 @@
+---
+interface Props {
+    weight?: 1 | 2;
+    align?: 'center' | 'start' | 'end';
+}
+
+const {weight = 1, align = 'start'} = Astro.props;
+
+const resolveLevelClass = (level: Props['weight']) => {
+    switch (level) {
+        case 2:
+            return 'weight2'
+        case 1:
+        default:
+            return 'weight1'
+    }
+}
+---
+
+<span
+    class={[
+        'root',
+        align === 'center' && 'alignCentered',
+        align === 'start' && 'alignStart',
+        align === 'end' && 'alignEnd',
+        resolveLevelClass(weight),
+    ].filter(Boolean).join(' ')}
+>
+    <slot/>
+</span>
+
+<style>
+    .root {
+        font-size: 25px;
+        line-height: 150%;
+        margin: 0;
+        font-family: 'Roboto Mono', sans-serif;
+    }
+
+    .weight1 {
+        font-weight: 400;
+    }
+
+    .weight2 {
+        font-weight: 500;
+    }
+
+    .alignCentered {
+        text-align: center;
+    }
+
+    .alignStart {
+        text-align: start;
+    }
+
+    .alignEnd {
+        text-align: end;
+    }
+</style>
+
